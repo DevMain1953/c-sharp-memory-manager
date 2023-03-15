@@ -32,6 +32,6 @@ Checking if key is pushed down
 ```
 if (KeyboardManager.IsKeyPushedDown(87))
 {
-    //W key is pushed dows
+    //W key is pushed down
 }
 ```
