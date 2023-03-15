@@ -1,18 +1,15 @@
 ﻿using System;
 using System.Runtime.InteropServices;
 
-namespace WinApi
+namespace WinAPI
 {
-    public class WinAPI
+    public class WindowsAPI
     {
         [DllImport("kernel32.dll", SetLastError = true)]
         protected static extern bool ReadProcessMemory(IntPtr hProcess, IntPtr lpBaseAddress, byte[] lpBuffer, Int32 nSize, out IntPtr lpNumberOfBytesRead);
 
         [DllImport("kernel32.dll")]
         protected static extern bool WriteProcessMemory(IntPtr hProcess, IntPtr lpBaseAddress, byte[] lpBuffer, Int32 nSize, out IntPtr lpNumberOfBytesWritten);
-
-        [DllImport("User32.dll")]
-        protected static extern short GetAsyncKeyState(System.Windows.Forms.Keys vKey);
 
         [DllImport("User32.dll")]
         protected static extern short GetAsyncKeyState(System.Int32 vKey);

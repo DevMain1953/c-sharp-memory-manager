@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Linq;
 using System.Diagnostics;
-using WinApi;
+using WinAPI;
 
 namespace MemoryManagement
 {
-    public class MemoryManagerFor32BitProcesses : WinAPI
+    public class MemoryManagerFor32BitProcesses : WindowsAPI
     {
         private IntPtr _processHandle;
         private byte[] _bytes = null;

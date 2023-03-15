@@ -1,12 +1,12 @@
-﻿using WinApi;
+﻿using WinAPI;
 
 namespace KeyboardManagement
 {
-    public class KeyboardManager : WinAPI
+    public class KeyboardManager : WindowsAPI
     {
-        public static bool IsKeyPushedDown(System.Windows.Forms.Keys key)
+        public static bool IsKeyPushedDown(System.Int32 codeOfVirtualKey)
         {
-            return (GetAsyncKeyState((int)key) & 0x8000) != 0;
+            return (GetAsyncKeyState(codeOfVirtualKey) & 0x8000) != 0;
         }
     }
 }
