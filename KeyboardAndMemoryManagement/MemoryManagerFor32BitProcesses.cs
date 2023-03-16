@@ -8,7 +8,7 @@ namespace MemoryManagement
     public class MemoryManagerFor32BitProcesses : WindowsAPI
     {
         private IntPtr _processHandle;
-        private byte[] _bytes = null;
+        private byte[] _bytes = new byte[10];
 
         private int GetProcessIDByProcessName(string processName)
         {
@@ -45,19 +45,15 @@ namespace MemoryManagement
 
         public MemoryManagerFor32BitProcesses ReadBytesFromAddress(int address, int numberOfBytesToRead)
         {
-            _bytes = new byte[numberOfBytesToRead];
             IntPtr numberOfReadBytes;
             ReadProcessMemory(_processHandle, (IntPtr)address, _bytes, numberOfBytesToRead, out numberOfReadBytes);
-            _bytes = null;
             return this;
         }
 
         public void WriteBytesToAddress(int address, int numberOfBytesToWrite)
         {
-            _bytes = new byte[numberOfBytesToWrite];
             IntPtr numberOfWrittenBytes;
             WriteProcessMemory(_processHandle, (IntPtr)address, _bytes, numberOfBytesToWrite, out numberOfWrittenBytes);
-            _bytes = null;
         }
 
         public int GetTargetAddressByPointersUsingOffsets(int[] offsetsInBytes, int baseAddressFromWhereToStartSearch, IntPtr processHandle)
