@@ -1,13 +1,13 @@
-## About project
+# Overview
 
 Project that allows users to maniplate values in process memory using WinAPI functions in C#. Methods are wrappers for original WinAPI functions.
 
-## How to install
+# Installation
 
 - first of all clone this repository using `git clone <link>` command
 - plase directory with classes to your project directory
 
-## How to use
+# Usage
 
 Create instance of memory manager then simply find process by name and attach to it. Use Task Manager to get process names.
 ```
