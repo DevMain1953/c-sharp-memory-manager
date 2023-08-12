@@ -1,10 +1,10 @@
 # Overview
 
-Project that allows users to maniplate values in process memory using WinAPI functions in C#. Methods are wrappers for original WinAPI functions.
+Methods to work with process memory using WinAPI functions in C#.
 
 # Installation
 
-- first of all clone this repository using `git clone <link>` command
+- clone this repository using `git clone <link>` command
 - plase directory with classes to your project directory
 
 # Usage
